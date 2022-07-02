@@ -288,7 +288,6 @@ class CountryPhoneCodePicker extends StatelessWidget {
         builder: (controller) {
           return Container(
             height: height,
-            width: width,
             padding: contentPadding,
             decoration: BoxDecoration(
               color: backgroundColor,
@@ -296,7 +295,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
               border: Border.all(color: borderColor, width: borderWidth),
             ),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 showFlag == true
                     ? Container(
