@@ -59,6 +59,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
     this.searchBarInitialValue = '',
     this.keyboardType = TextInputType.text,
     this.showCursor = true,
+    this.space = 0.0,
   });
 
   // ignore: use_key_in_widget_constructors
@@ -111,6 +112,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
     this.searchBarInitialValue = '',
     this.keyboardType = TextInputType.text,
     this.showCursor = true,
+    this.space = 0.0,
   });
 
   Country defaultCountryCode = countries[0];
@@ -240,6 +242,9 @@ class CountryPhoneCodePicker extends StatelessWidget {
   //show cursor if the value is set to true
   bool showCursor;
 
+  //create space between
+  double space;
+
   @override
   Widget build(BuildContext context) {
     CountryController countryController = Get.put(CountryController());
@@ -308,6 +313,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
                         ),
                       )
                     : const SizedBox(),
+                SizedBox(width: space),
                 showName == true
                     ? Expanded(
                         child: Text(
@@ -317,12 +323,14 @@ class CountryPhoneCodePicker extends StatelessWidget {
                         ),
                       )
                     : const SizedBox(),
+                SizedBox(width: space),
                 showPhoneCode == true
                     ? Text(
                         "(${controller.selectedCountry.phoneCode})",
                         style: countryPhoneCodeTextStyle,
                       )
                     : const SizedBox(),
+                SizedBox(width: space),
                 actionIcon,
               ],
             ),
