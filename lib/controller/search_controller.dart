@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 
-import 'package:country_phone_code_picker/constants/country_codes.dart';
-import 'package:country_phone_code_picker/models/country.dart';
+import 'package:country_phone_picker/constants/country_codes.dart';
+import 'package:country_phone_picker/models/country.dart';
 
 class SearchController extends GetxController {
   //list of the countries displaying below the search bar

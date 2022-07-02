@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:country_phone_code_picker/controller/country_controller.dart';
+import 'package:country_phone_picker/controller/country_controller.dart';
 
 // ignore: must_be_immutable
 class CountryFlagWidget extends StatelessWidget {
