@@ -62,7 +62,8 @@ class CountryPhoneCodePicker extends StatelessWidget {
       this.searchBarInitialValue = '',
       this.keyboardType = TextInputType.text,
       this.showCursor = true,
-      this.space = 0.0,
+      this.flagPadding = EdgeInsets.zero,
+      this.countryPhonePadding = EdgeInsets.zero,
       required this.onCallback});
 
   // ignore: use_key_in_widget_constructors
@@ -118,7 +119,8 @@ class CountryPhoneCodePicker extends StatelessWidget {
       this.searchBarInitialValue = '',
       this.keyboardType = TextInputType.text,
       this.showCursor = true,
-      this.space = 0.0,
+      this.flagPadding = EdgeInsets.zero,
+      this.countryPhonePadding = EdgeInsets.zero,
       required this.onCallback});
 
   Country defaultCountryCode = countries[0];
@@ -248,8 +250,11 @@ class CountryPhoneCodePicker extends StatelessWidget {
   //show cursor if the value is set to true
   bool showCursor;
 
-  //create space between
-  double space;
+  //flag padding
+  EdgeInsets flagPadding;
+
+  //country phone padding
+  EdgeInsets countryPhonePadding;
 
   //callback with country value
   Function(Country) onCallback;
@@ -311,6 +316,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
                     ? Container(
                         height: flagHeight,
                         width: flagWidth,
+                        padding: flagPadding,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(flagBorderRadius),
                           image: DecorationImage(
@@ -322,7 +328,6 @@ class CountryPhoneCodePicker extends StatelessWidget {
                         ),
                       )
                     : const SizedBox(),
-                SizedBox(width: space),
                 showName == true
                     ? Expanded(
                         child: Text(
@@ -332,14 +337,15 @@ class CountryPhoneCodePicker extends StatelessWidget {
                         ),
                       )
                     : const SizedBox(),
-                SizedBox(width: space),
                 showPhoneCode == true
-                    ? Text(
-                        "(${controller.selectedCountry.phoneCode})",
-                        style: countryPhoneCodeTextStyle,
+                    ? Padding(
+                        padding: countryPhonePadding,
+                        child: Text(
+                          "(${controller.selectedCountry.phoneCode})",
+                          style: countryPhoneCodeTextStyle,
+                        ),
                       )
                     : const SizedBox(),
-                SizedBox(width: space),
                 actionIcon,
               ],
             ),
