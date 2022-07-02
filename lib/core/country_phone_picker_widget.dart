@@ -319,7 +319,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
                     : const SizedBox(),
                 showPhoneCode == true
                     ? Text(
-                        controller.selectedCountry.phoneCode,
+                        "(${controller.selectedCountry.phoneCode})",
                         style: countryPhoneCodeTextStyle,
                       )
                     : const SizedBox(),
