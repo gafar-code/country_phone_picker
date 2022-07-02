@@ -316,7 +316,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
                     ? Container(
                         height: flagHeight,
                         width: flagWidth,
-                        padding: flagPadding,
+                        margin: flagPadding,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(flagBorderRadius),
                           image: DecorationImage(
