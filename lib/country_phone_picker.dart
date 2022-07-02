@@ -1,6 +1,6 @@
-library country_phone_code_picker;
+library country_phone_picker;
 
-export 'package:country_phone_picker/core/country_phone_code_picker_widget.dart';
+export 'package:country_phone_picker/core/country_phone_picker_widget.dart';
 export 'package:country_phone_picker/core/country_phone_code.dart';
 export 'package:country_phone_picker/core/country_code.dart';
 export 'package:country_phone_picker/core/country_flag.dart';
