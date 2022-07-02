@@ -11,109 +11,115 @@ import 'package:country_phone_picker/constants/country_codes.dart';
 // ignore: must_be_immutable
 class CountryPhoneCodePicker extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
-  CountryPhoneCodePicker({
-    this.height = 45,
-    this.width = 80,
-    this.flagHeight = 30,
-    this.flagWidth = 30,
-    this.backgroundColor = Colors.transparent,
-    this.borderRadius = 15,
-    this.flagBorderRadius = 5,
-    this.borderColor = Colors.transparent,
-    this.borderWidth = 0,
-    this.contentPadding =
-        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-    this.countryNameTextStyle =
-        const TextStyle(fontSize: 14, color: Colors.black),
-    this.countryPhoneCodeTextStyle =
-        const TextStyle(color: Colors.black, fontSize: 14),
-    this.showFlag = true,
-    this.showName = false,
-    this.showPhoneCode = false,
-    this.actionIcon = const Icon(Icons.arrow_drop_down_rounded),
-    this.searchSheetBackground = const Color(0xfffafafa),
-    this.searchBarLeadingIcon =
-        const Icon(Icons.arrow_back_outlined, color: Colors.black),
-    this.searchBarHintText,
-    this.searchBarHintStyle = const TextStyle(),
-    this.searchBarLabelText,
-    this.searchBarLabelStyle = const TextStyle(),
-    this.searchBarHelperText,
-    this.searchBarHelperStyle = const TextStyle(),
-    this.searchBarPrefixText,
-    this.searchBarPrefixStyle = const TextStyle(),
-    this.searchBarPrefixIcon = const Icon(Icons.search, color: Colors.black),
-    this.searchBarContentPadding =
-        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-    this.border = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.errorBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.focusedBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.disabledBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.focusedErrorBorder =
-        const OutlineInputBorder(borderSide: BorderSide.none),
-    this.enabledBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.searchBarCursorColor = Colors.black,
-    this.searchBarCursorHeight = 20,
-    this.searchBarCursorWidth = 2,
-    this.style = const TextStyle(),
-    this.searchBarInitialValue = '',
-    this.keyboardType = TextInputType.text,
-    this.showCursor = true,
-    this.space = 0.0,
-  });
+  CountryPhoneCodePicker(
+      {this.height = 45,
+      this.width = 80,
+      this.flagHeight = 30,
+      this.flagWidth = 30,
+      this.backgroundColor = Colors.transparent,
+      this.borderRadius = 15,
+      this.flagBorderRadius = 5,
+      this.borderColor = Colors.transparent,
+      this.borderWidth = 0,
+      this.contentPadding =
+          const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      this.countryNameTextStyle =
+          const TextStyle(fontSize: 14, color: Colors.black),
+      this.countryPhoneCodeTextStyle =
+          const TextStyle(color: Colors.black, fontSize: 14),
+      this.showFlag = true,
+      this.showName = false,
+      this.showPhoneCode = false,
+      this.actionIcon = const Icon(Icons.arrow_drop_down_rounded),
+      this.searchSheetBackground = const Color(0xfffafafa),
+      this.searchBarLeadingIcon =
+          const Icon(Icons.arrow_back_outlined, color: Colors.black),
+      this.searchBarHintText,
+      this.searchBarHintStyle = const TextStyle(),
+      this.searchBarLabelText,
+      this.searchBarLabelStyle = const TextStyle(),
+      this.searchBarHelperText,
+      this.searchBarHelperStyle = const TextStyle(),
+      this.searchBarPrefixText,
+      this.searchBarPrefixStyle = const TextStyle(),
+      this.searchBarPrefixIcon = const Icon(Icons.search, color: Colors.black),
+      this.searchBarContentPadding =
+          const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      this.border = const OutlineInputBorder(borderSide: BorderSide.none),
+      this.errorBorder = const OutlineInputBorder(borderSide: BorderSide.none),
+      this.focusedBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.disabledBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.focusedErrorBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.enabledBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.searchBarCursorColor = Colors.black,
+      this.searchBarCursorHeight = 20,
+      this.searchBarCursorWidth = 2,
+      this.style = const TextStyle(),
+      this.searchBarInitialValue = '',
+      this.keyboardType = TextInputType.text,
+      this.showCursor = true,
+      this.space = 0.0,
+      required this.onCallback});
 
   // ignore: use_key_in_widget_constructors
-  CountryPhoneCodePicker.withDefaultSelectedCountry({
-    required this.defaultCountryCode,
-    this.height = 45,
-    this.width = 80,
-    this.flagHeight = 30,
-    this.flagWidth = 30,
-    this.backgroundColor = Colors.transparent,
-    this.borderRadius = 15,
-    this.flagBorderRadius = 5,
-    this.borderColor = Colors.transparent,
-    this.borderWidth = 0,
-    this.contentPadding =
-        const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-    this.countryNameTextStyle =
-        const TextStyle(fontSize: 14, color: Colors.black),
-    this.countryPhoneCodeTextStyle =
-        const TextStyle(color: Colors.black, fontSize: 14),
-    this.showFlag = true,
-    this.showName = false,
-    this.showPhoneCode = false,
-    this.actionIcon = const Icon(Icons.arrow_drop_down_rounded),
-    this.searchSheetBackground = const Color(0xfffafafa),
-    this.searchBarLeadingIcon =
-        const Icon(Icons.arrow_back_outlined, color: Colors.black),
-    this.searchBarHintText,
-    this.searchBarHintStyle = const TextStyle(),
-    this.searchBarLabelText,
-    this.searchBarLabelStyle = const TextStyle(),
-    this.searchBarHelperText,
-    this.searchBarHelperStyle = const TextStyle(),
-    this.searchBarPrefixText,
-    this.searchBarPrefixStyle = const TextStyle(),
-    this.searchBarPrefixIcon = const Icon(Icons.search, color: Colors.black),
-    this.searchBarContentPadding =
-        const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-    this.border = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.errorBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.focusedBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.disabledBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.focusedErrorBorder =
-        const OutlineInputBorder(borderSide: BorderSide.none),
-    this.enabledBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-    this.searchBarCursorColor = Colors.black,
-    this.searchBarCursorHeight = 20,
-    this.searchBarCursorWidth = 2,
-    this.style = const TextStyle(),
-    this.searchBarInitialValue = '',
-    this.keyboardType = TextInputType.text,
-    this.showCursor = true,
-    this.space = 0.0,
-  });
+  CountryPhoneCodePicker.withDefaultSelectedCountry(
+      {required this.defaultCountryCode,
+      this.height = 45,
+      this.width = 80,
+      this.flagHeight = 30,
+      this.flagWidth = 30,
+      this.backgroundColor = Colors.transparent,
+      this.borderRadius = 15,
+      this.flagBorderRadius = 5,
+      this.borderColor = Colors.transparent,
+      this.borderWidth = 0,
+      this.contentPadding =
+          const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      this.countryNameTextStyle =
+          const TextStyle(fontSize: 14, color: Colors.black),
+      this.countryPhoneCodeTextStyle =
+          const TextStyle(color: Colors.black, fontSize: 14),
+      this.showFlag = true,
+      this.showName = false,
+      this.showPhoneCode = false,
+      this.actionIcon = const Icon(Icons.arrow_drop_down_rounded),
+      this.searchSheetBackground = const Color(0xfffafafa),
+      this.searchBarLeadingIcon =
+          const Icon(Icons.arrow_back_outlined, color: Colors.black),
+      this.searchBarHintText,
+      this.searchBarHintStyle = const TextStyle(),
+      this.searchBarLabelText,
+      this.searchBarLabelStyle = const TextStyle(),
+      this.searchBarHelperText,
+      this.searchBarHelperStyle = const TextStyle(),
+      this.searchBarPrefixText,
+      this.searchBarPrefixStyle = const TextStyle(),
+      this.searchBarPrefixIcon = const Icon(Icons.search, color: Colors.black),
+      this.searchBarContentPadding =
+          const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      this.border = const OutlineInputBorder(borderSide: BorderSide.none),
+      this.errorBorder = const OutlineInputBorder(borderSide: BorderSide.none),
+      this.focusedBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.disabledBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.focusedErrorBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.enabledBorder =
+          const OutlineInputBorder(borderSide: BorderSide.none),
+      this.searchBarCursorColor = Colors.black,
+      this.searchBarCursorHeight = 20,
+      this.searchBarCursorWidth = 2,
+      this.style = const TextStyle(),
+      this.searchBarInitialValue = '',
+      this.keyboardType = TextInputType.text,
+      this.showCursor = true,
+      this.space = 0.0,
+      required this.onCallback});
 
   Country defaultCountryCode = countries[0];
 
@@ -245,6 +251,9 @@ class CountryPhoneCodePicker extends StatelessWidget {
   //create space between
   double space;
 
+  //callback with country value
+  Function(Country) onCallback;
+
   @override
   Widget build(BuildContext context) {
     CountryController countryController = Get.put(CountryController());
@@ -280,6 +289,7 @@ class CountryPhoneCodePicker extends StatelessWidget {
               searchBarInitialValue: searchBarInitialValue,
               keyboardType: keyboardType,
               showCursor: showCursor,
+              onCallback: onCallback,
             ),
           ),
         );

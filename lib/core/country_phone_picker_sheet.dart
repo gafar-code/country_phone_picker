@@ -1,3 +1,4 @@
+import 'package:country_phone_picker/country_phone_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,6 +35,7 @@ class CountryPhoneCodePickerModalSheet extends StatelessWidget {
     required this.searchBarInitialValue,
     required this.keyboardType,
     required this.showCursor,
+    required this.onCallback,
   });
 
   TextEditingController? searchBarInput;
@@ -113,6 +115,9 @@ class CountryPhoneCodePickerModalSheet extends StatelessWidget {
   //show cursor if the value is set to true
   bool showCursor;
 
+  //callback with country value
+  Function(Country) onCallback;
+
   @override
   Widget build(BuildContext context) {
     searchBarInput = TextEditingController(text: searchBarInitialValue);
@@ -183,6 +188,7 @@ class CountryPhoneCodePickerModalSheet extends StatelessWidget {
                           countryController.updateSelectedCountry(
                               controller.filteredCountries[index]);
                           searchController.updateQueryList('');
+                          onCallback(countryController.selectedCountry);
                           Navigator.pop(context);
                         },
                         child: Container(
