@@ -1,10 +1,8 @@
+import 'package:country_phone_picker/constants/country_flag_image.dart';
+import 'package:country_phone_picker/controller/search_controller.dart';
 import 'package:country_phone_picker/country_phone_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'package:country_phone_picker/constants/country_flag_image.dart';
-import 'package:country_phone_picker/controller/search_controller.dart';
-import 'package:country_phone_picker/controller/country_controller.dart';
 
 // ignore: must_be_immutable
 class CountryPhoneCodePickerModalSheet extends StatelessWidget {
@@ -124,52 +122,47 @@ class CountryPhoneCodePickerModalSheet extends StatelessWidget {
     SearchController searchController = Get.put(SearchController());
     CountryController countryController = Get.find<CountryController>();
     return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: searchSheetBackground,
-        elevation: 0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          icon: searchBarLeadingIcon,
-        ),
-      ),
       body: Container(
         color: searchSheetBackground,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
           children: [
+            const SizedBox(height: 60),
             TextFormField(
               controller: searchBarInput,
               onChanged: (query) {
                 searchController.updateQueryList(query);
               },
+              textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
-                hintText: searchBarHintText,
-                hintStyle: searchBarHintStyle,
-                labelText: searchBarLabelText,
-                labelStyle: searchBarLabelStyle,
-                helperText: searchBarHelperText,
-                helperStyle: searchBarHelperStyle,
-                prefixText: searchBarPrefixText,
-                prefixStyle: searchBarPrefixStyle,
-                prefixIcon: searchBarPrefixIcon,
-                suffix: IconButton(
-                  onPressed: () {
-                    searchBarInput!.clear();
-                    searchController.updateQueryList('');
-                  },
-                  icon: const Icon(Icons.cancel_rounded, color: Colors.black),
-                ),
-                contentPadding: searchBarContentPadding,
-                border: border,
-                errorBorder: errorBorder,
-                enabledBorder: enabledBorder,
-                focusedBorder: focusedBorder,
-                disabledBorder: disabledBorder,
-                focusedErrorBorder: focusedErrorBorder,
-              ),
+                  hintText: searchBarHintText,
+                  hintStyle: searchBarHintStyle,
+                  labelText: searchBarLabelText,
+                  labelStyle: searchBarLabelStyle,
+                  helperText: searchBarHelperText,
+                  helperStyle: searchBarHelperStyle,
+                  prefixText: searchBarPrefixText,
+                  prefixStyle: searchBarPrefixStyle,
+                  prefixIcon: searchBarPrefixIcon,
+                  contentPadding: searchBarContentPadding,
+                  border: border,
+                  errorBorder: errorBorder,
+                  enabledBorder: enabledBorder,
+                  focusedBorder: focusedBorder,
+                  disabledBorder: disabledBorder,
+                  focusedErrorBorder: focusedErrorBorder,
+                  fillColor: const Color(0xFFFFFFFF),
+                  filled: true,
+                  suffixIcon: InkWell(
+                      splashColor: Colors.transparent,
+                      onTap: () {
+                        searchBarInput!.clear();
+                        searchController.updateQueryList('');
+                      },
+                      child: const Icon(
+                        Icons.cancel_rounded,
+                        color: Colors.red,
+                      ))),
               cursorColor: searchBarCursorColor,
               cursorHeight: searchBarCursorHeight,
               cursorWidth: searchBarCursorWidth,

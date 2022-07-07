@@ -101,17 +101,43 @@ class CountryPhoneCodePicker extends StatelessWidget {
       this.searchBarPrefixStyle = const TextStyle(),
       this.searchBarPrefixIcon = const Icon(Icons.search, color: Colors.black),
       this.searchBarContentPadding =
-          const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-      this.border = const OutlineInputBorder(borderSide: BorderSide.none),
-      this.errorBorder = const OutlineInputBorder(borderSide: BorderSide.none),
-      this.focusedBorder =
-          const OutlineInputBorder(borderSide: BorderSide.none),
-      this.disabledBorder =
-          const OutlineInputBorder(borderSide: BorderSide.none),
-      this.focusedErrorBorder =
-          const OutlineInputBorder(borderSide: BorderSide.none),
-      this.enabledBorder =
-          const OutlineInputBorder(borderSide: BorderSide.none),
+          const EdgeInsets.fromLTRB(18.0, 14.0, 0.0, 14.0),
+      this.border = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
+      this.errorBorder = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
+      this.focusedBorder = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
+      this.disabledBorder = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
+      this.focusedErrorBorder = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
+      this.enabledBorder = const OutlineInputBorder(
+        borderSide: BorderSide(
+          color: Colors.white,
+          width: 0.0,
+        ),
+      ),
       this.searchBarCursorColor = Colors.black,
       this.searchBarCursorHeight = 20,
       this.searchBarCursorWidth = 2,
